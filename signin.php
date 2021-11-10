@@ -15,7 +15,7 @@ if(isset($_POST['signin']))
 		$Balance="100";
 		if($password==$password1)
 		{
-		$sql="insert into bhavya values('$username','$address','$place','$Mobileno','$Email','$password','$RFID_NO','$Balance','','','')";
+		$sql="insert into cycle1 values('$username','$address','$place','$Mobileno','$Email','$password','$RFID_NO','$Balance','','','')";
 		if(mysqli_query($con_key,$sql))
 		{
 			$msg="success";

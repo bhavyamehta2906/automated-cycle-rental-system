@@ -16,14 +16,14 @@ $status = 1;
 if($Balance==0){
 	echo "no balance";
 }
-$sql="UPDATE bhavya set `Balance`=". $Balance ." WHERE `username`='$id'";
+$sql="UPDATE cycle1 set `Balance`=". $Balance ." WHERE `username`='$id'";
 mysqli_query($con_key, $sql);
 
-$sql="UPDATE bhavya set `Station_No`=". $Station_no ." WHERE `username`='$id'";
+$sql="UPDATE cycle1 set `Station_No`=". $Station_no ." WHERE `username`='$id'";
 mysqli_query($con_key, $sql);
-$sql="UPDATE bhavya set `Slot_No`=". $Slot_no ." WHERE `username`='$id'";
+$sql="UPDATE cycle1 set `Slot_No`=". $Slot_no ." WHERE `username`='$id'";
 mysqli_query($con_key, $sql);
-$sql="UPDATE bhavya set `status`=". $status ." WHERE `username`='$id'";
+$sql="UPDATE cycle1 set `status`=". $status ." WHERE `username`='$id'";
 mysqli_query($con_key, $sql);
 echo "hi";
 }
@@ -47,7 +47,7 @@ echo "hi";
 body {
   font-family: Arial, Helvetica, sans-serif;
   color:"red";
-  background-image:url('A.jpg');
+  background-color: black;
 	background-size: cover;
   background-repeat: repeat-x repeat-y;
 }
@@ -74,8 +74,47 @@ body {
 }
 .middle {
   margin-right: 300px;
-  margin-left: 400px;
+  margin-left: 480px;
   margin-top:150px;
+
+    border-radius: 8px;
+/*			box-shadow: 0 0px 20px 10px rgb(254,254,254);*/
+            background: #000;
+			float: left;
+			padding-bottom: 5%;
+            padding-top: 2%;
+            padding-left: 2%;
+            padding-right: 2%;
+            position: relative;
+}
+    
+            .middle:before, .middle:after{
+             z-index: -1;
+  content: '';
+  position: absolute;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  top: -3px;
+  left: -3px;
+  background: linear-gradient(45deg, #f8accb, #80aeda,#79e69c,
+              #ff9797,#e6f169,#fc0090,#d1cdea,#6ee2c6,#e7f356);
+  background-size: 300%;
+  animation: shadow 20s linear infinite;
+        }
+        
+        .middle:after{
+  filter: blur(10px);
+}
+@keyframes shadow { 
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300%;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 @media (max-width: 500px) {
   .grid-container  {
@@ -97,6 +136,6 @@ body {
 		<h5>Balance :<input type="button" id="balance"  value="<?php echo $Balance; ?>" /></h5>
 		<h5>  RFID    :<input type="button" id="rfid"  value="<?php echo $rfid; ?>" />
 		</form>
-<h6> Successful</h6>
+<br><br><h6> Successful</h6>
 </body>
 </html>
